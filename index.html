@@ -9,12 +9,20 @@
   <head>
     <meta charset="UTF-8" />
     <link data-optimized="2" rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -553,315 +561,491 @@
     <meta name="msapplication-TileImage" content="./images/vimcologo.jpg" />
   </head>
 
-  <!--Heaser Start-->
-  <body
-    class="home page-template-default page page-id-30 wp-custom-logo wp-embed-responsive unselectable oceanwp-theme sidebar-mobile default-breakpoint content-full-screen page-header-disabled has-breadcrumbs no-margins elementor-default elementor-kit-32 elementor-page elementor-page-30"
-  >
-    <div id="outer-wrap" class="site clr">
-      <div id="wrap" class="clr">
-        <header
-          id="site-header"
-          class="minimal-header clr"
-          data-height="74"
-          itemscope="itemscope"
-          itemtype="http://schema.org/WPHeader"
-        >
-          <div id="site-header-inner" class="clr container">
-            <div
-              id="site-logo"
-              class="clr"
-              itemscope
-              itemtype="http://schema.org/Brand"
-            >
-              <div id="site-logo-inner" class="clr">
-                <a
-                  href="index.html"
-                  class="custom-logo-link"
-                  rel="home"
-                  aria-current="page"
-                  ><img
-                    src="./images/logo.jpg"
-                    class="large-logo"
-                    alt="Vimco steel Steels"
-                    decoding="async"
-                  />
+  <!-- Header Start -->
+<body class="home page-template-default page page-id-30 wp-custom-logo wp-embed-responsive unselectable oceanwp-theme sidebar-mobile default-breakpoint content-full-screen page-header-disabled has-breadcrumbs no-margins elementor-default elementor-kit-32 elementor-page elementor-page-30">
+  <div id="outer-wrap" class="site clr">
+    <section id="wrap" class="clr">
+      <style>
+        /* Import Bebas Neue Font */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-                  <style>
-                    .large-logo {
-                      width: 130px !important; /* Increase width */
-                      height: 60px !important; /* Maintain aspect ratio */
-                      margin-left: 50px;
-                    }
-                  
-                  
-                    </style>
+        /* General Reset */
+        body {
+          margin: 0;
+          font-family: 'Bebas Neue', sans-serif;
+          background-color: #f8f8f8;
+        }
 
-                    
-                  
-                </a>
-              </div>
-            </div>
-            <div id="site-navigation-wrap" class="clr">
-              <nav
-                id="site-navigation"
-                class="navigation main-navigation clr"
-                itemscope="itemscope"
-                itemtype="http://schema.org/SiteNavigationElement"
-              >
-                <ul id="menu-main-menu" class="main-menu dropdown-menu sf-menu">
-                  <li
-                    id="menu-item-127"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-30 current_page_item menu-item-127"
-                  >
-                    <a href="index.html" class="menu-link"
-                      ><span class="text-wrap">Home</span></a
+        /* Header Styling */
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 30px;
+          background-color: #ffffff;
+          border-bottom: 1px solid #e0e0e0;
+          transition: all 0.3s ease-in-out;
+        }
+
+        /* Logo Styling */
+        .logo img {
+          width: 250px;
+          height: auto;
+          transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+          transform: scale(1.1);
+        }
+
+        /* Desktop Navbar Styling */
+        .oceanwp-custom-menu ul {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+          gap: 30px;
+        }
+
+        .oceanwp-custom-menu ul li {
+          display: inline-block;
+        }
+
+        .oceanwp-custom-menu ul li a {
+          font-size: 18px;
+          color: #333;
+          text-decoration: none;
+          padding: 10px 15px;
+          transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .oceanwp-custom-menu ul li a:hover {
+          color: #007bff;
+          transform: translateY(-2px);
+          border-bottom: 2px solid #007bff;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+        }
+
+        .hamburger div {
+          width: 30px;
+          height: 3px;
+          background-color: #333;
+          border-radius: 2px;
+        }
+
+        /* Mobile Menu Styling */
+        .oceanwp-custom-menu ul.mobile-menu {
+          position: absolute;
+          top: 60px;
+          right: 15px;
+          width: 250px;
+          background-color: #ffffff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          padding: 10px 0;
+          border-radius: 8px;
+          display: none; /* Start hidden on mobile */
+          flex-direction: column;
+          z-index: 999; /* Ensure it's above other content */
+          max-height: calc(100vh - 70px); /* Make sure menu doesn't exceed the viewport */
+          overflow-y: auto; /* Allow scrolling if the menu is too long */
+        }
+
+        /* Show the menu when active */
+        .oceanwp-custom-menu ul.mobile-menu.active {
+          display: flex;
+        }
+
+        .oceanwp-custom-menu ul.mobile-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .oceanwp-custom-menu ul.mobile-menu li a {
+          font-size: 18px;
+          padding: 12px 0;
+          display: block;
+        }
+
+        /* Mobile Specific Styles */
+        @media (max-width: 768px) {
+          .hamburger {
+            display: flex; /* Show the hamburger on mobile */
+          }
+
+          /* Hide desktop menu on mobile */
+          .oceanwp-custom-menu ul {
+            display: none; /* Hide the desktop menu on mobile */
+          }
+
+          /* Mobile menu only shown when hamburger is clicked */
+          .oceanwp-custom-menu ul.mobile-menu {
+            display: none; /* Hide mobile menu by default */
+            width: 100%; /* Ensure the mobile menu spans the full width */
+            top: 70px; /* Adjust for mobile header */
+          }
+
+          .oceanwp-custom-menu ul.mobile-menu li {
+            text-align: left;
+            padding-left: 20px;
+          }
+        }
+      </style>
+
+      <header>
+        <!-- Logo Section -->
+        <div id="site-logo" class="logo">
+          <a href="index.html" class="custom-logo-link" rel="home">
+            <img
+              src="./images/logo.jpg"
+              class="large-logo"
+              alt="Vimco Steel Steels"
+              decoding="async"
+            />
+          </a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" aria-label="Toggle Navigation" tabindex="0">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="oceanwp-custom-menu">
+          <ul>
+            <!-- Desktop Menu -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="Product.html">Products</a></li>
+            <li><a href="./Catlog.pdf">Catalog</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
+          </ul>
+
+          <!-- Mobile Menu -->
+          <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="Product.html">Products</a></li>
+            <li><a href="./Catlog.pdf">Catalog</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".oceanwp-custom-menu .mobile-menu");
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+
+        // Close the menu if Escape key is pressed
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && menu.classList.contains("active")) {
+            menu.classList.remove("active");
+          }
+        });
+      </script>
+    </section>
+  </div>
+
+<!-- Header End -->
+
+
+        <!--Animation start-->
+        <main id="main" class="site-main clr">
+          <div id="content-wrap" class="container clr">
+            <div id="primary" class="content-area clr">
+              <div id="content" class="site-content clr">
+                <article class="single-page-article clr">
+                  <div class="entry clr" itemprop="text">
+                    <div
+                      data-elementor-type="wp-page"
+                      data-elementor-id="30"
+                      class="elementor elementor-30"
+                      data-elementor-settings="[]"
                     >
-                  </li>
-                  <li
-                    id="menu-item-190"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"
-                  >
-                    <a href="Aboutus.html" class="menu-link"
-                      ><span class="text-wrap">About Us</span></a
-                    >
-                  </li>
-                  <li
-                    id="menu-item-191"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-191"
-                  >
-                    <a href="Product.html" class="menu-link"
-                      ><span class="text-wrap">Products </span></a
-                    >
+                      <div class="elementor-inner">
+                        <div class="elementor-section-wrap">
+                          <section
+                            class="elementor-element elementor-element-64cc7883 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
+                            data-id="64cc7883"
+                            data-element_type="section"
+                            data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-no"
+                            >
+                              <div class="elementor-row">
+                                <div
+                                  class="elementor-element elementor-element-481dfca0 elementor-column elementor-col-100 elementor-top-column"
+                                  data-id="481dfca0"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-5dacf930 elementor--h-position-center elementor--v-position-middle elementor-arrows-position-inside elementor-pagination-position-inside elementor-widget elementor-widget-slides"
+                                        data-id="5dacf930"
+                                        data-element_type="widget"
+                                        data-settings='{"navigation":"both","autoplay":"yes","pause_on_hover":"yes","pause_on_interaction":"yes","autoplay_speed":5000,"infinite":"yes","transition":"slide","transition_speed":500}'
+                                        data-widget_type="slides.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-swiper">
+                                            <div
+                                              class="elementor-slides-wrapper elementor-main-swiper swiper-container"
+                                              dir="ltr"
+                                              data-animation="fadeInUp"
+                                            >
+                                              <div
+                                                class="swiper-wrapper elementor-slides"
+                                              >
+                                                <div
+                                                  class="elementor-repeater-item-4492491 swiper-slide"
+                                                >
+                                                  <div
+                                                    class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"
+                                                  ></div>
+                                                  <div
+                                                    class="elementor-background-overlay"
+                                                  ></div>
+                                                  <div
+                                                    class="swiper-slide-inner"
+                                                  >
+                                                    <div
+                                                      class="swiper-slide-contents"
+                                                    >
+                                                      <div
+                                                        class="elementor-slide-heading"
+                                                      >
+                                                        STAINLESS STEEL
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  class="elementor-repeater-item-4788fd6 swiper-slide"
+                                                >
+                                                  <div
+                                                    class="swiper-slide-bg"
+                                                  ></div>
+                                                  <div
+                                                    class="elementor-background-overlay"
+                                                  ></div>
+                                                  <div
+                                                    class="swiper-slide-inner"
+                                                  >
+                                                    <div
+                                                      class="swiper-slide-contents"
+                                                    >
+                                                      <div
+                                                        class="elementor-slide-heading"
+                                                      >
+                                                       ALUMINUN
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  class="elementor-repeater-item-9b50d8d swiper-slide"
+                                                >
+                                                  <div
+                                                    class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"
+                                                  ></div>
+                                                  <div
+                                                    class="elementor-background-overlay"
+                                                  ></div>
+                                                  <div
+                                                    class="swiper-slide-inner"
+                                                  >
+                                                    <div
+                                                      class="swiper-slide-contents"
+                                                    >
+                                                      <div
+                                                        class="elementor-slide-heading"
+                                                      >
+                                                        TITANIUM
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  class="elementor-repeater-item-9f9cf31 swiper-slide"
+                                                >
+                                                  <div
+                                                    class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"
+                                                  ></div>
+                                                  <div
+                                                    class="elementor-background-overlay"
+                                                  ></div>
+                                                  <div
+                                                    class="swiper-slide-inner"
+                                                  >
+                                                    <div
+                                                      class="swiper-slide-contents"
+                                                    >
+                                                      <div
+                                                        class="elementor-slide-heading"
+                                                      >
+                                                        NICKLE
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  class="elementor-repeater-item-56b335a swiper-slide"
+                                                >
+                                                  <div
+                                                    class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"
+                                                  ></div>
+                                                  <div
+                                                    class="elementor-background-overlay"
+                                                  ></div>
+                                                  <div
+                                                    class="swiper-slide-inner"
+                                                  >
+                                                    <div
+                                                      class="swiper-slide-contents"
+                                                    >
+                                                      <div
+                                                        class="elementor-slide-heading"
+                                                      >
+                                                        COPPER & BRASS
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  class="elementor-repeater-item-5c6a7c4 swiper-slide"
+                                                >
+                                                  <div
+                                                    class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"
+                                                  ></div>
+                                                  <div
+                                                    class="elementor-background-overlay"
+                                                  ></div>
+                                                  <div
+                                                    class="swiper-slide-inner"
+                                                  >
+                                                    <div
+                                                      class="swiper-slide-contents"
+                                                    >
+                                                      <div
+                                                        class="elementor-slide-heading"
+                                                      >
+                                                        CARBON & ALLOY STEEL
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="elementor-swiper-button elementor-swiper-button-prev"
+                                              >
+                                                <i
+                                                  class="fas fa-chevron-left"
+                                                  aria-hidden="true"
+                                                ></i>
+                                                <span
+                                                  class="elementor-screen-only"
+                                                  >Previous</span
+                                                >
+                                              </div>
+                                              <div
+                                                class="elementor-swiper-button elementor-swiper-button-next"
+                                              >
+                                                <i
+                                                  class="fas fa-chevron-right"
+                                                  aria-hidden="true"
+                                                ></i>
+                                                <span
+                                                  class="elementor-screen-only"
+                                                  >Next</span
+                                                >
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <style>
+                                          .elementor-swiper-button {
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            z-index: 10;
+                                            background: rgba(0, 0, 0, 0.5);
+                                            color: #fff;
+                                            width: 50px;
+                                            height: 50px;
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            cursor: pointer;
+                                            transition: background 0.3s;
+                                          }
 
-                    <!--products-->
-                  </li>
+                                          .elementor-swiper-button i {
+                                            font-size: 20px;
+                                          }
 
-                  <li
-                  id="menu-item-226"
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-226"
-                >
-                  <a href="./Catlog.pdf" class="menu-link" target="_blank">
-                    <span class="text-wrap">Catalog</span>
-                  </a>
-                </li>
-                
-                  
+                                          .elementor-swiper-button:hover {
+                                            background: rgba(0, 0, 0, 0.8);
+                                          }
 
-                  <li
-                    id="menu-item-128"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128"
-                  >
-                    <a
-                      href="ContactUs.html"
-                      class="menu-link"
-                      ><span class="text-wrap">Contact</span></a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="oceanwp-mobile-menu-icon clr mobile-right">
-              <a href="#" class="mobile-menu">
-                <i class="fa fa-bars"></i>
-                <span class="oceanwp-text">Menu</span></a
-              >
-            </div>
-          </div>
-            
-            
-            
-            
-        </header>
-        <!--Header End-->
+                                          .elementor-swiper-button-prev {
+                                            left: 20px;
+                                          }
 
-        
-<!--Animation start-->
-<main id="main" class="site-main clr">
-  <div id="content-wrap" class="container clr">
-    <div id="primary" class="content-area clr">
-      <div id="content" class="site-content clr">
-        <article class="single-page-article clr">
-          <div class="entry clr" itemprop="text">
-            <div
-              data-elementor-type="wp-page"
-              data-elementor-id="30"
-              class="elementor elementor-30"
-              data-elementor-settings="[]"
-            >
-              <div class="elementor-inner">
-                <div class="elementor-section-wrap">
-                  <section
-                    class="elementor-element elementor-element-64cc7883 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
-                    data-id="64cc7883"
-                    data-element_type="section"
-                    data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'
-                  >
-                    <div class="elementor-container elementor-column-gap-no">
-                      <div class="elementor-row">
-                        <div
-                          class="elementor-element elementor-element-481dfca0 elementor-column elementor-col-100 elementor-top-column"
-                          data-id="481dfca0"
-                          data-element_type="column"
-                        >
-                          <div class="elementor-column-wrap elementor-element-populated">
-                            <div class="elementor-widget-wrap">
-                              <div
-                                class="elementor-element elementor-element-5dacf930 elementor--h-position-center elementor--v-position-middle elementor-arrows-position-inside elementor-pagination-position-inside elementor-widget elementor-widget-slides"
-                                data-id="5dacf930"
-                                data-element_type="widget"
-                                data-settings='{"navigation":"both","autoplay":"yes","pause_on_hover":"yes","pause_on_interaction":"yes","autoplay_speed":5000,"infinite":"yes","transition":"slide","transition_speed":500}'
-                                data-widget_type="slides.default"
-                              >
-                                <div class="elementor-widget-container">
-                                  <div class="elementor-swiper">
-                                    <div
-                                      class="elementor-slides-wrapper elementor-main-swiper swiper-container"
-                                      dir="ltr"
-                                      data-animation="fadeInUp"
-                                    >
-                                      <div class="swiper-wrapper elementor-slides">
-                                        <div class="elementor-repeater-item-4492491 swiper-slide">
-                                          <div class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"></div>
-                                          <div class="elementor-background-overlay"></div>
-                                          <div class="swiper-slide-inner">
-                                            <div class="swiper-slide-contents">
-                                              <div class="elementor-slide-heading">
-                                                ALUMINUM
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="elementor-repeater-item-4788fd6 swiper-slide">
-                                          <div class="swiper-slide-bg"></div>
-                                          <div class="elementor-background-overlay"></div>
-                                          <div class="swiper-slide-inner">
-                                            <div class="swiper-slide-contents">
-                                              <div class="elementor-slide-heading">
-                                                STAINLESS STEEL
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="elementor-repeater-item-9b50d8d swiper-slide">
-                                          <div class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"></div>
-                                          <div class="elementor-background-overlay"></div>
-                                          <div class="swiper-slide-inner">
-                                            <div class="swiper-slide-contents">
-                                              <div class="elementor-slide-heading">
-                                                TITANIUM
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="elementor-repeater-item-9f9cf31 swiper-slide">
-                                          <div class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"></div>
-                                          <div class="elementor-background-overlay"></div>
-                                          <div class="swiper-slide-inner">
-                                            <div class="swiper-slide-contents">
-                                              <div class="elementor-slide-heading">
-                                                NICKLE
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="elementor-repeater-item-56b335a swiper-slide">
-                                          <div class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"></div>
-                                          <div class="elementor-background-overlay"></div>
-                                          <div class="swiper-slide-inner">
-                                            <div class="swiper-slide-contents">
-                                              <div class="elementor-slide-heading">
-                                                COPPER & BRASS
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="elementor-repeater-item-5c6a7c4 swiper-slide">
-                                          <div class="swiper-slide-bg elementor-ken-burns elementor-ken-burns--in"></div>
-                                          <div class="elementor-background-overlay"></div>
-                                          <div class="swiper-slide-inner">
-                                            <div class="swiper-slide-contents">
-                                              <div class="elementor-slide-heading">
-                                                CARBON & ALLOY STEEL
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
+                                          .elementor-swiper-button-next {
+                                            right: 20px;
+                                          }
+                                        </style>
+                                        <script>
+                                          document.addEventListener(
+                                            "DOMContentLoaded",
+                                            function () {
+                                              const swiper = new Swiper(
+                                                ".swiper-container",
+                                                {
+                                                  navigation: {
+                                                    nextEl:
+                                                      ".elementor-swiper-button-next",
+                                                    prevEl:
+                                                      ".elementor-swiper-button-prev",
+                                                  },
+                                                  loop: true, // Enable looping
+                                                  autoplay: {
+                                                    delay: 5000,
+                                                    disableOnInteraction: true,
+                                                  },
+                                                }
+                                              );
+                                            }
+                                          );
+                                        </script>
                                       </div>
-                                      <div class="elementor-swiper-button elementor-swiper-button-prev">
-                                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                                        <span class="elementor-screen-only">Previous</span>
-                                      </div>
-                                      <div class="elementor-swiper-button elementor-swiper-button-next">
-                                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                        <span class="elementor-screen-only">Next</span>
-                                      </div>
-                                      
                                     </div>
                                   </div>
                                 </div>
-                                <style>
-                                  .elementor-swiper-button {
-                                    position: absolute;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    z-index: 10;
-                                    background: rgba(0, 0, 0, 0.5);
-                                    color: #fff;
-                                    width: 50px;
-                                    height: 50px;
-                                    border-radius: 50%;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    cursor: pointer;
-                                    transition: background 0.3s;
-                                  }
-                                  
-                                  .elementor-swiper-button i {
-                                    font-size: 20px;
-                                  }
-                                  
-                                  .elementor-swiper-button:hover {
-                                    background: rgba(0, 0, 0, 0.8);
-                                  }
-                                  
-                                  .elementor-swiper-button-prev {
-                                    left: 20px;
-                                  }
-                                  
-                                  .elementor-swiper-button-next {
-                                    right: 20px;
-                                  }
-                                  
-                                  
-                                </style>
-                                <script>
-                                  document.addEventListener("DOMContentLoaded", function () {
-                                    const swiper = new Swiper('.swiper-container', {
-                                      navigation: {
-                                        nextEl: '.elementor-swiper-button-next',
-                                        prevEl: '.elementor-swiper-button-prev',
-                                      },
-                                      loop: true, // Enable looping
-                                      autoplay: {
-                                        delay: 5000,
-                                        disableOnInteraction: true,
-                                      },
-                                    });
-                                  });
-
-                                </script>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <!--Animation end-->
+                          </section>
+                          <!--Animation end-->
 
-                  <!--Animation end-->
-
+                          <!--Animation end-->
 
                           <!--VIMCO STEEL INFO START-->
                           <section
@@ -1551,28 +1735,29 @@
                                                         <figure
                                                           class="wp-caption"
                                                         >
-                                                        <!--Page Link-->
-                                                        <a
-                                                        href="./Products/Aluminum-page.html"
-                                                      >
-                                                          <img
-                                                            loading="lazy"
-                                                            decoding="async"
-                                                            width="360"
-                                                            height="242"
-                                                            src="./VIMCO/images/Products/Aluminum.jpg"
-                                                            class="attachment-large size-large"
-                                                            alt="Aluminum"
-                                                            srcset="
-                                                              ./images/Products/Aluminum.jpg 360w,
-                                                              ./images/Products/Aluminum.jpg 300w
-                                                            "
-                                                            sizes="(max-width: 360px) 100vw, 360px"
-                                                          />
+                                                          <!--Page Link-->
+                                                          <a
+                                                            href="./Products/Stainless-steel-page.html"
+                                                          >
+                                                            <img
+                                                              loading="lazy"
+                                                              decoding="async"
+                                                              width="360"
+                                                              height="242"
+                                                              src="./images/Products/stainlessteel.jpg"
+                                                              class="attachment-large size-large"
+                                                              alt="Aluminum"
+                                                              srcset="
+                                                                ./images/Products/stainlessteel.jpg 360w,
+                                                                ./images/Products/stainlessteel.jpg 300w
+                                                              "
+                                                              sizes="(max-width: 360px) 100vw, 360px"
+                                                            />
+                                                          </a>
                                                           <figcaption
                                                             class="widget-image-caption wp-caption-text"
                                                           >
-                                                            ALUMINUM
+                                                            STAINLESS STEEL
                                                           </figcaption>
                                                         </figure>
                                                       </div>
@@ -1736,7 +1921,7 @@
                                                           class="wp-caption"
                                                         >
                                                           <a
-                                                            href="./Products/Stainless-steel-page.html"
+                                                            href="./Products/Aluminum-page.html"
                                                           >
                                                             <!--Change link-->
                                                             <img
@@ -1744,12 +1929,12 @@
                                                               decoding="async"
                                                               width="360"
                                                               height="242"
-                                                              src="./images/Products/stainlessteel.jpg"
+                                                              src="./images/Products/Aluminum.jpg"
                                                               class="attachment-large size-large"
                                                               alt=""
                                                               srcset="
-                                                                ./images/Products/stainlessteel.jpg 360w,
-                                                                ./images/Products/stainlessteel.jpg 300w
+                                                                ./images/Products/Aluminum.jpg 360w,
+                                                                ./images/Products/Aluminum.jpg 300w
                                                               "
                                                               sizes="(max-width: 360px) 100vw, 360px"
                                                             />
@@ -1757,7 +1942,7 @@
                                                           <figcaption
                                                             class="widget-image-caption wp-caption-text"
                                                           >
-                                                            STAINLESS STEEL
+                                                            ALUMINUN
                                                           </figcaption>
                                                         </figure>
                                                       </div>
@@ -1850,25 +2035,25 @@
                                                         <figure
                                                           class="wp-caption"
                                                         >
-
-                                                         <!--Page Link-->
-                                                         <a
-                                                         href="./Products/carbon-alloy-steel-page.html"
-                                                       >
-                                                          <img
-                                                            loading="lazy"
-                                                            decoding="async"
-                                                            width="360"
-                                                            height="242"
-                                                            src="./images/Products/carbonalloy.jpg"
-                                                            class="attachment-large size-large"
-                                                            alt=""
-                                                            srcset="
-                                                              ./images/Products/carbonalloy.jpg         360w,
-                                                              ./images/Products/carbonalloy.jpg 300w
-                                                            "
-                                                            sizes="(max-width: 360px) 100vw, 360px"
-                                                          />
+                                                          <!--Page Link-->
+                                                          <a
+                                                            href="./Products/carbon-alloy-steel-page.html"
+                                                          >
+                                                            <img
+                                                              loading="lazy"
+                                                              decoding="async"
+                                                              width="360"
+                                                              height="242"
+                                                              src="./images/Products/carbonalloy.jpg"
+                                                              class="attachment-large size-large"
+                                                              alt=""
+                                                              srcset="
+                                                                ./images/Products/carbonalloy.jpg 360w,
+                                                                ./images/Products/carbonalloy.jpg 300w
+                                                              "
+                                                              sizes="(max-width: 360px) 100vw, 360px"
+                                                            />
+                                                          </a>
                                                           <figcaption
                                                             class="widget-image-caption wp-caption-text"
                                                           >
@@ -2156,7 +2341,7 @@
         </button>
       </form>
     </div>
-    
+
     <script type="text/javascript">
       (function () {
         var options = {
@@ -2177,7 +2362,7 @@
         var x = document.getElementsByTagName("script")[0];
         x.parentNode.insertBefore(s, x);
       })();
-    </scrip>
+    </script>
 
     <script>
       var timeout_result;
@@ -2227,7 +2412,6 @@
         verticalHeaderTarget: "icon",
         customSelects:
           ".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select",
-       
       };
       /*  */
     </script>
@@ -2243,7 +2427,7 @@
       src="./litespeed/litespeedf78b-bc7.js"
       id="oss-social-share-script-js"
     ></script>
-    
+
     <script
       data-optimized="1"
       type="text/javascript"
@@ -2259,7 +2443,6 @@
     <script type="text/javascript" id="elementor-pro-frontend-js-before">
       /*  */
       var ElementorProFrontendConfig = {
-       
         nonce: "fd84effecd",
         i18n: { toc_no_headings_found: "No headings were found on this page." },
         shareButtonsNetworks: {
@@ -2285,7 +2468,6 @@
           print: { title: "Print" },
         },
         facebook_sdk: { lang: "en_US", app_id: "" },
-        
       };
       /*  */
     </script>
