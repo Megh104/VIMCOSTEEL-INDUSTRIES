@@ -548,115 +548,205 @@
     <link rel="apple-touch-icon" href="../images/vimcologo.jpg" />
     <meta name="msapplication-TileImage" content="../images/vimcologo.jpg" />
   </head>
-  <body
-    class="home page-template-default page page-id-30 wp-custom-logo wp-embed-responsive unselectable oceanwp-theme sidebar-mobile default-breakpoint content-full-screen page-header-disabled has-breadcrumbs no-margins elementor-default elementor-kit-32 elementor-page elementor-page-30"
-  >
-    <div id="outer-wrap" class="site clr">
-      <div id="wrap" class="clr">
-        <header
-          id="site-header"
-          class="minimal-header clr"
-          data-height="74"
-          itemscope="itemscope"
-          itemtype="http://schema.org/WPHeader"
-        >
-          <div id="site-header-inner" class="clr container">
-            <div
-              id="site-logo"
-              class="clr"
-              itemscope
-              itemtype="http://schema.org/Brand"
-            >
-              <div id="site-logo-inner" class="clr">
-                <a
-                  href="../index.html"
-                  class="custom-logo-link"
-                  rel="home"
-                  aria-current="page"
-                  ><img
-                    src="../images/logo.jpg"
-                    class="large-logo"
-                    alt="Vimco steel Steels"
-                    decoding="async"
-                  />
+  <!-- Header Start -->
+<body class="home page-template-default page page-id-30 wp-custom-logo wp-embed-responsive unselectable oceanwp-theme sidebar-mobile default-breakpoint content-full-screen page-header-disabled has-breadcrumbs no-margins elementor-default elementor-kit-32 elementor-page elementor-page-30">
+  <div id="outer-wrap" class="site clr">
+    <section id="wrap" class="clr">
+      <style>
+        /* Import Bebas Neue Font */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-                  <style>
-                    .large-logo {
-                      width: 130px !important; /* Increase width */
-                      height: 60px !important; /* Maintain aspect ratio */
-                      margin-left: 50px;
-                    }
-                  </style>
-                </a>
-              </div>
-            </div>
-            <div id="site-navigation-wrap" class="clr">
-              <nav
-                id="site-navigation"
-                class="navigation main-navigation clr"
-                itemscope="itemscope"
-                itemtype="http://schema.org/SiteNavigationElement"
-              >
-                <ul id="menu-main-menu" class="main-menu dropdown-menu sf-menu">
-                  <li
-                    id="menu-item-127"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-30 current_page_item menu-item-127"
-                  >
-                    <a href="../index.html" class="menu-link"
-                      ><span class="text-wrap">Home</span></a
-                    >
-                  </li>
-                  <li
-                    id="menu-item-190"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"
-                  >
-                    <a href="../Aboutus.html" class="menu-link"
-                      ><span class="text-wrap">About Us</span></a
-                    >
-                  </li>
-                  <li
-                    id="menu-item-191"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-191"
-                  >
-                    <a href="../Product.html" class="menu-link"
-                      ><span class="text-wrap">Products </span></a
-                    >
+        /* General Reset */
+        body {
+          margin: 0;
+          font-family: 'Bebas Neue', sans-serif;
+          background-color: #f8f8f8;
+        }
 
-                    <!--products-->
-                  </li>
+        /* Header Styling */
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 30px;
+          background-color: #ffffff;
+          border-bottom: 1px solid #e0e0e0;
+          transition: all 0.3s ease-in-out;
+        }
 
-                  <li
-                  id="menu-item-226"
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-226"
-                >
-                  <a href="../Catlog.pdf" class="menu-link" target="_blank">
-                    <span class="text-wrap">Catalog</span>
-                  </a>
-                </li>
-                
+        /* Logo Styling */
+        .logo img {
+          width: 250px;
+          height: auto;
+          transition: transform 0.3s ease;
+        }
 
-                 
+        .logo img:hover {
+          transform: scale(1.1);
+        }
 
-                  <li
-                    id="menu-item-128"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128"
-                  >
-                    <a href="../ContactUs.html" class="menu-link"
-                      ><span class="text-wrap">Contact</span></a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="oceanwp-mobile-menu-icon clr mobile-right">
-              <a href="#" class="mobile-menu">
-                <i class="fa fa-bars"></i>
-                <span class="oceanwp-text">Menu</span></a
-              >
-            </div>
-          </div>
-        </header>
+        /* Desktop Navbar Styling */
+        .oceanwp-custom-menu ul {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+          gap: 30px;
+        }
 
+        .oceanwp-custom-menu ul li {
+          display: inline-block;
+        }
+
+        .oceanwp-custom-menu ul li a {
+          font-size: 18px;
+          color: #333;
+          text-decoration: none;
+          padding: 10px 15px;
+          transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .oceanwp-custom-menu ul li a:hover {
+          color: #007bff;
+          transform: translateY(-2px);
+          border-bottom: 2px solid #007bff;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+        }
+
+        .hamburger div {
+          width: 30px;
+          height: 3px;
+          background-color: #333;
+          border-radius: 2px;
+        }
+
+        /* Mobile Menu Styling */
+        .oceanwp-custom-menu ul.mobile-menu {
+          position: absolute;
+          top: 60px;
+          right: 15px;
+          width: 250px;
+          background-color: #ffffff;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          padding: 10px 0;
+          border-radius: 8px;
+          display: none; /* Start hidden on mobile */
+          flex-direction: column;
+          z-index: 999; /* Ensure it's above other content */
+          max-height: calc(100vh - 70px); /* Make sure menu doesn't exceed the viewport */
+          overflow-y: auto; /* Allow scrolling if the menu is too long */
+        }
+
+        /* Show the menu when active */
+        .oceanwp-custom-menu ul.mobile-menu.active {
+          display: flex;
+        }
+
+        .oceanwp-custom-menu ul.mobile-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .oceanwp-custom-menu ul.mobile-menu li a {
+          font-size: 18px;
+          padding: 12px 0;
+          display: block;
+        }
+
+        /* Mobile Specific Styles */
+        @media (max-width: 768px) {
+          .hamburger {
+            display: flex; /* Show the hamburger on mobile */
+          }
+
+          /* Hide desktop menu on mobile */
+          .oceanwp-custom-menu ul {
+            display: none; /* Hide the desktop menu on mobile */
+          }
+
+          /* Mobile menu only shown when hamburger is clicked */
+          .oceanwp-custom-menu ul.mobile-menu {
+            display: none; /* Hide mobile menu by default */
+            width: 100%; /* Ensure the mobile menu spans the full width */
+            top: 70px; /* Adjust for mobile header */
+          }
+
+          .oceanwp-custom-menu ul.mobile-menu li {
+            text-align: left;
+            padding-left: 20px;
+          }
+        }
+      </style>
+
+      <header>
+        <!-- Logo Section -->
+        <div id="site-logo" class="logo">
+          <a href="../index.html" class="custom-logo-link" rel="home">
+            <img
+              src="../images/logo.jpg"
+              class="large-logo"
+              alt="Vimco Steel Steels"
+              decoding="async"
+            />
+          </a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" aria-label="Toggle Navigation" tabindex="0">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="oceanwp-custom-menu">
+          <ul>
+            <!-- Desktop Menu -->
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Aboutus.html">About</a></li>
+            <li><a href="../Product.html">Products</a></li>
+            <li><a href="../Catlog.pdf">Catalog</a></li>
+            <li><a href="../ContactUs.html">Contact</a></li>
+          </ul>
+
+          <!-- Mobile Menu -->
+          <ul class="mobile-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Aboutus.html">About</a></li>
+            <li><a href="../Product.html">Products</a></li>
+            <li><a href="../Catlog.pdf">Catalog</a></li>
+            <li><a href="../ContactUs.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".oceanwp-custom-menu .mobile-menu");
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+
+        // Close the menu if Escape key is pressed
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && menu.classList.contains("active")) {
+            menu.classList.remove("active");
+          }
+        });
+      </script>
+    </section>
+  </div>
+
+<!-- Header End -->
 
 
         <!--Animation start-->
@@ -1478,3 +1568,5 @@
     ></script>
   </body>
 </html>
+
+
