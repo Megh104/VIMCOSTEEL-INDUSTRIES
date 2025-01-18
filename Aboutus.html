@@ -986,14 +986,19 @@
                                         data-widget_type="image.default"
                                       >
                                         <div class="elementor-widget-container">
-                                          <img
-                                            src="./images/AboutUs.jpg"
+                                          <img 
+                                            src="./images/AboutUs.jpg" 
                                             alt="Vimco steel"
-                                            style="
-                                              max-width: 250%;
-                                              height: auto;
-                                            "
-                                          />
+                                            class="responsive-img"
+                                        />
+                                        <style>
+                                          @media (max-width: 768px) {
+                                            .responsive-img {
+                                                width: 100%;  /* Ensures it takes the full width of mobile screens */
+                                            }
+                                        }
+                                        
+                                        </style>
                                         </div>
                                       </div>
                                     </div>
