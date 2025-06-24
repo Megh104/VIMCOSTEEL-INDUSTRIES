@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Sitemap: https://vimcosteel.com/sitemap.xml
+
+# Allow all bots to index important content
+Allow: /Products/
+Allow: /images/
+Allow: /Aboutus.html
+Allow: /ContactUs.html
+Allow: /Product.html
+
+# Prevent indexing of non-essential files
+Disallow: /litespeed/
+Disallow: /*.js$
+Disallow: /*.css$ 
